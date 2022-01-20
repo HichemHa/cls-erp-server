@@ -50,7 +50,7 @@ router.patch('/update/:id',async(req,res)=>{
 
   try {
     await Client.findByIdAndUpdate(_id, req.body);
-    await res.status(201).json({ msg: "Client updated successfully hhhh" });
+    await res.status(201).json({ msg: "Client updated successfully" });
   } catch (error) {
     console.error("Client update failed", error);
     res.status(401).json({ msg: `Client update Failed` });
