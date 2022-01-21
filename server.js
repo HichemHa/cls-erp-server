@@ -10,7 +10,7 @@ const company = require('./routes/company')
 const category = require('./routes/category')
 const product = require('./routes/product')
 const client = require('./routes/client')
-
+const devis = require('./routes/devis')
 var cors = require('cors')
 
 connectDB();
@@ -25,7 +25,7 @@ app.use(`${apiurl}/company`,company);
 app.use(`${apiurl}/category`,category);
 app.use(`${apiurl}/product`,product);
 app.use(`${apiurl}/client`,client);
-
+app.use(`${apiurl}/devis`,devis);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, (err) => {

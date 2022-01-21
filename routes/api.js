@@ -31,6 +31,10 @@ router.get("/", (req, res) => {
       addcalient: `http://localhost:${PORT}/api/v1/client/addclient`,
       deleteclient: `http://localhost:${PORT}/api/v1/client/delete/:id`,
     },
+    devis:{
+      getall: `http://localhost:${PORT}/api/v1/devis/getalldevis`,
+      addcalient: `http://localhost:${PORT}/api/v1/devis/adddevis`,
+    }
 
   });
 });
