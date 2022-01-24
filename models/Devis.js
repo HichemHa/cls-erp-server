@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 
+var nextRunDate = new Date();
+nextRunDate.setMonth(nextRunDate.getMonth() + 3);
+
 const deviSchema = mongoose.Schema({
     numerodevis:Number,
     datedevis:{type:Date,default: Date.now()},
-    datevalidite:Date,
+    datevalidite:{type:Date,default: nextRunDate},
     client:{ type: mongoose.Types.ObjectId, ref: "Client" },
     listproduit:[
         {
