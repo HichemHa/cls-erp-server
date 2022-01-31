@@ -13,6 +13,26 @@ router.get("/getallproduct", async (req, res) => {
   }
 });
 
+router.get("/getprodbyid/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+      const prodctbyid = await Product.findById(id);
+      res.status(201).json(prodctbyid);
+  } catch (error) {
+      console.error("get Product failed", error);
+      res.status(401).json({ msg: `get Product Failed` });
+  }
+});
+router.get("/getprodbyname/:name", async (req, res) => {
+  const namee = req.params.name;
+  try {
+      const prodctbyname = await Product.find({ name : namee});
+      res.status(201).json(prodctbyname);
+  } catch (error) {
+      console.error("get Product failed", error);
+      res.status(401).json({ msg: `get Product Failed` });
+  }
+});
 router.post("/addproduct", async (req, res) => {
   const newprod = req.body;
   const searchResult = await Product.findOne({ name: newprod.name });
